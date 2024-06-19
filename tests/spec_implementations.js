@@ -1,13 +1,13 @@
 const { openBrowser, goto, write, click, closeBrowser, text, into, press } = require('taiko');
-const assert = require('assert');
+const assert= require('assert');
 
-step("Öffne die Wetter-App", async function() {
+step("Gehe zu <url>", async function(url) {
     await openBrowser();
-    await goto('https://dotbot56.github.io/weather/'); // Hier die URL deiner Wetter-App einfügen
+    await goto(url);
 });
 
-step("Gib die Adresse <address> in das Eingabefeld ein", async function(address) {
-    await write(address, into(textBox({placeholder: "Adresse eingeben"})));
+step("Gib die Adresse in das Eingabefeld ein" "<address>", async function(address) {
+    await write(address, into(textBox({ id: "weatherform"})));
 });
 
 step("Klicke auf <button>", async function(button) {
