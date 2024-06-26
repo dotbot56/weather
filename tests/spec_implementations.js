@@ -1,4 +1,4 @@
-const { openBrowser, goto, write, click, closeBrowser, text, textBox, into } = require('taiko');
+const { openBrowser, goto, write, click, closeBrowser, text, textBox, into, button } = require('taiko');
 const assert= require('assert');
 
 step("Gehe zu <url>", async function(url) {
