@@ -1,13 +1,13 @@
-const { openBrowser, goto, write, click, closeBrowser, text, into, press } = require('taiko');
+const { openBrowser, goto, write, click, closeBrowser, text, textBox, into } = require('taiko');
 const assert= require('assert');
 
 step("Gehe zu <url>", async function(url) {
-    await openBrowser();
+    await openBrowser({headless:true});
     await goto(url);
 });
 
-step("Gib die Adresse in das Eingabefeld ein" "<address>", async function(address) {
-    await write(address, into(textBox({ id: "weatherform"})));
+step("Gib die Adresse <address> in das Eingabefeld ein <input>", async function(address, input) {
+    await write(address, into(textBox(input)));
 });
 
 step("Klicke auf <button>", async function(button) {
